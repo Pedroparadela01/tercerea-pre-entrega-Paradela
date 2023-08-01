@@ -1,0 +1,28 @@
+{% extends 'aplicacion/index.html' %}
+{% load static %}
+
+{% block contenido %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block titulo %}
+          Empleados  
+        {% endblock titulo %}
+    </title>
+</head>
+<body>
+  <h1>Empleados</h1>   
+
+  {% for empleado in empleados %}
+  <ul>
+    <li>
+       {{ empleado.id }}|| Nombre: {{ empleado.nombre }} {{ empleado.apellido }} || Puesto: {{ empleado.puesto }}
+    </li> 
+  </ul>
+  {% endfor %}
+</body>
+</html>
+{% endblock contenido %}

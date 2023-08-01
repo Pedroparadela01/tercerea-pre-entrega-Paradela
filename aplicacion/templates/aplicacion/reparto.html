@@ -1,0 +1,28 @@
+{% extends 'aplicacion/index.html' %}
+{% load static %}
+
+{% block contenido %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    {% block titulo %}
+      Reparto 
+    {% endblock titulo %}
+  </title>
+</head>
+<body>
+  <h1>Reparto</h1>   
+
+  {% for r in reparto %}
+  <ul>
+    <li>
+       {{ r.id }}|| Cliente: {{ r.cliente }} || Fecha de etrega: {{ r.fechaentrega }} || (Entregado: {{ r.entregado}})
+    </li> 
+  </ul>
+  {% endfor %}
+</body>
+</html>
+{% endblock contenido %}

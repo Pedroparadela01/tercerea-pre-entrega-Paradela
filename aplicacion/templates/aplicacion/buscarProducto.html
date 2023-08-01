@@ -1,0 +1,23 @@
+{% extends 'aplicacion/index.html' %}
+{% load static %}
+
+{% block contenido %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Ingrese el producto que desea buscar:</h3>
+    <form action="/aplicacion/buscar2" method="get">
+        {% csrf_token %}
+        <input type="text" name="producto" id="producto">
+        <input type="submit" value="Buscar">
+    </form>
+    
+</body>
+</html>
+{% endblock contenido %}

@@ -1,0 +1,23 @@
+{% extends 'aplicacion/index.html' %}
+{% load static %}
+    
+{% block contenido %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Precio</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for producto in productos %}
+        <tr>
+            <td>{{ producto.id }}</td>
+            <td>{{ producto.producto }}</td>
+            <td>{{ producto.precio }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock contenido %}
